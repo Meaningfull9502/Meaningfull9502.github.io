@@ -1,3 +1,9 @@
+---
+layout: single
+title:  "논문리뷰"
+---
+
+
 # ANOMALYBERT (ICLR 23)
 
 Domain: Time Series
