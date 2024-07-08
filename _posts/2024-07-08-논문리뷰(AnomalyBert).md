@@ -13,7 +13,7 @@ Github: https://github.com/Jhryu30/AnomalyBERT
 - **현실적인 문제 :** 제조 및 다양한 상황 속에서 많은 시계열 데이터들이 관측된다. 하지만 모든 데이터에 대해 이상치 여부를 라벨링하기 어렵다.
 - 사전지식 필요 : 시계열 데이터에서 나타나는 이상치의 종류는 point-global, point-contextual, pattern-shapelet, pattern-seasonal, pattern-trend 5가지가 있다. 하지만 5가지 종류의 이상치를 생성하기 위해서는 해당 시계열 데이터에 대한 탐색이 필요하다. pattern-shapelet의 경우, 기존과 다른 pattern을 생성해야 하기에 기존 pattern이 무엇인지 알아야 한다.
     
-    ![**고려대학교 산업경영공학부 DSBA 연구실-유튜브에서 발취**](ANOMALYBERT%20(ICLR%2023)%20aab0e0d9f81d432a9983dcb0f4c5c648/Untitled.png)
+    
     
     **고려대학교 산업경영공학부 DSBA 연구실-유튜브에서 발취**
     
@@ -23,13 +23,13 @@ Github: https://github.com/Jhryu30/AnomalyBERT
 
 ## Model Architecture
 
-![Untitled](ANOMALYBERT%20(ICLR%2023)%20aab0e0d9f81d432a9983dcb0f4c5c648/Untitled%201.png)
+
 
 ### 1. 데이터 : Data Degradation(이상치 생성) →  시계열 데이터 Patching
 
 - Data Degradation
     
-    ![Untitled](ANOMALYBERT%20(ICLR%2023)%20aab0e0d9f81d432a9983dcb0f4c5c648/Untitled%202.png)
+    
     
     - A weighted sequence with the outside of the window (Soft replacement) : 다른 window의 값과의 랜덤 교체
     - A constant sequence (Uniform replacement)
@@ -38,7 +38,6 @@ Github: https://github.com/Jhryu30/AnomalyBERT
     
     → 해당 Data Degradation을 통해 사전지식 필요 없이 시계열의 5가지 이상치 종류를 다 커버할 수 있다.  저자는 실험을 통해 이를 증명했고, 아래의 테이블은 Data Degradation을 통해 학습한 모델이 5가지 종류 이상치 분류 성능을 나타낸 것이다.
     
-    ![Untitled](ANOMALYBERT%20(ICLR%2023)%20aab0e0d9f81d432a9983dcb0f4c5c648/Untitled%203.png)
     
 
 ### 2. 모델 : Linear Embedding Layer for Patches → Transformer(1D relative position bias) → Prediction Block for Anomaly score($a_t$)
@@ -51,7 +50,6 @@ Github: https://github.com/Jhryu30/AnomalyBERT
     ⁍
     $$
     
-    ![**Rethinking and Improving Relative Position Encoding for Vision Transformer (CVPR 21)**](ANOMALYBERT%20(ICLR%2023)%20aab0e0d9f81d432a9983dcb0f4c5c648/Untitled%204.png)
     
     **Rethinking and Improving Relative Position Encoding for Vision Transformer (CVPR 21)**
     
@@ -70,11 +68,11 @@ $$
 
 - 모든 데이터셋에서 가장 높은 $F1$ 및 $F1_{PA}$에서도 준수한 성능
 
-![Untitled](ANOMALYBERT%20(ICLR%2023)%20aab0e0d9f81d432a9983dcb0f4c5c648/Untitled%205.png)
+
 
 - Soft replacement 기법이 가장 효과적 / Length adjustment는 데이터에 따라 유용할 수도, 안 좋을 수도..
 
-![Untitled](ANOMALYBERT%20(ICLR%2023)%20aab0e0d9f81d432a9983dcb0f4c5c648/Untitled%206.png)
+
 
 ---
 
