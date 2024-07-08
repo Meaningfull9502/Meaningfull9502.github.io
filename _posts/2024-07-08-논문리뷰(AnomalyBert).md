@@ -3,16 +3,7 @@ layout: single
 title:  "논문리뷰"
 ---
 
-
 # ANOMALYBERT (ICLR 23)
-
-Domain: Time Series
-Task: Anomaly Detection
-Model: Transformer
-Learning Strategy: Self-Supervised
-Keyword: 1D relative position bias, Data Degradation
-File: ANOMALYBERT%20(ICLR%2023)%20aab0e0d9f81d432a9983dcb0f4c5c648/ANOMALYBERT-_SELF-SUPERVISED_TRANSFORMER_FOR_TIME_SERIES_ANOMALY_DETECTION_USING_DATA_DEGRADATION_SCHEME.pdf
-Github: https://github.com/Jhryu30/AnomalyBERT
 
 ## Motivation
 
